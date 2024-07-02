@@ -1,0 +1,330 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+*{
+   padding: 0;
+   margin: 0;
+   font-family: "poppins", sans-serif;
+}
+
+body{
+  width: 100%;
+  height: 100vh;
+   color: white;
+   background-image: url("./bg.jpg");
+   background-position: center;
+   background-size: cover;
+   top:0;
+   left:0;
+   bottom: 0;
+   right: 0;
+   /* position: absolute; */
+   z-index: -1;
+ }
+ .container{
+   display: flex;
+   flex-direction: column;
+  
+ }
+ .searchContainer {
+   margin:10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+   background: rgba(255, 255, 255, .2);
+   border: 2px solid rgba(255, 255, 255, .2);
+   backdrop-filter: blur(20px);
+   padding: 8px;
+   border-radius: 10px;
+   
+ }
+ .searchContainer input{
+   height: 20px;
+   width: 540px;
+   border-radius: 5px;
+   padding: 10px;
+   border-radius: 30px;
+   border: none;
+   outline: none;
+   font-size: 16px;
+   background: transparent;
+   text-transform: capitalize;
+   color: #fff;
+
+ }
+
+ .searchContainer input::placeholder{
+   color: #fff;
+   font-size: 17px;
+   text-transform: capitalize;
+ }
+ .searchContainer button {
+   width: 40px;
+   height: 38px;
+   font-size: 22px;
+   background-color: transparent;
+   border: none;
+   outline: none;
+   color: #fff;
+   cursor: pointer;
+   border-radius: 50%;
+   border: none;
+   cursor: pointer;
+ }
+
+ .searchContainer i{
+  font-size: 22px;
+ }
+
+ .currentForcast{
+   display: flex;
+   flex-wrap: wrap;
+ }
+ .currentForcastInfo{
+   display: flex;
+   justify-content: center;
+   width:100%;
+ }
+ .currentForcastDate {
+   display: flex;
+   flex-direction: column;
+   text-align: right;
+   width: 180px;
+ }
+ #dayTemperature {
+   font-size: 35px;
+  padding-top: 30px;
+  position: absolute;
+  left: 50px;
+
+ }
+ #currentTemperatureUnit{
+   font-size: 12px;
+   display: inline-block;
+  top: 35%;
+  left: 80%;
+   position: absolute;
+ }
+ .currentConditions div{
+   padding-left: 15px;
+   font-size: 13px;
+   color: whitesmoke;
+ }
+
+ .info{
+  width: 40%;
+ position: relative;
+ }
+ .info img{
+}
+.currentConditions span{
+  font-size: 14px;
+  padding-right: 10px;
+}
+.currentConditions img{
+  width: 30px;
+  height: 30px;
+  padding-right: 10px;
+}
+ .currentForcastDate div{
+   margin: 10px;
+   font-size: 15px;
+   text-align: center;
+   text-transform: capitalize;
+ }
+ .dailyForcastContainer{
+   display: flex;
+   margin-top: 20px;
+ }
+ .dailyForcastContainer {
+   display: flex;
+   margin-top: 20px;
+   flex-wrap: wrap;
+   text-align: center;
+   cursor: pointer;
+   background: rgba(255, 255, 255, .2);
+   backdrop-filter: blur(30px);
+   padding: 10px;
+   margin-bottom: 10px;
+ }
+ .dailyForcast{
+   margin-right: 10px;
+   width: 75px;
+ }
+ .weekday{
+   text-align: center;
+ }
+ .maxMinTemp{
+   text-align: center;
+ }
+ .temp{
+   padding-right: 5px;
+ }
+ 
+ #alert {
+   width: 300px;
+   height: 40px;
+   display: none;
+   position: fixed;
+   text-align: center;
+   align-content: center;
+   justify-content: center;
+   left:30%;
+   top:20%;
+   transform: translate(-50%);
+   font-size: medium;
+   font-weight: bold;
+   z-index: 1000;
+   background-color: whitesmoke;
+   color:#d10404;
+   border-radius: 5px;
+   align-items: center;
+ }
+ 
+ .not-found {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100px);
+  text-align: center;
+  z-index: 2;
+ /* margin-top: 80px; */
+ padding-top: 140px;
+  background: rgba(255, 255, 255, .2);
+  backdrop-filter: blur(40px);
+  transform: translateY(-140%);
+  transition: transform .5s ease;
+}
+
+.not-found.active,
+.toast-container.active{
+  transform: translateY(0%);
+  overflow: hidden;
+}
+.not-found img {
+  width: 65%;
+  
+}
+
+.not-found w{
+  font-size:15px ;
+}
+
+.not-found footer{
+  position: absolute;
+  bottom: 10px;
+  right: 3px;
+  font-size: 10px;
+}
+
+ .close{
+  padding: 5px 70px;
+  border-radius: 20px;
+  background:rgba(65, 65, 65, 0.541);
+  font-size: 16px;
+  margin-top: 30px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  left: 50%;
+  z-index: 1000;
+}
+.not-found p {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.plan-text{
+  position: fixed;
+  top: 60%;
+  left: 5%;
+  font-size: 25px;
+  z-index: -1;
+}
+
+
+.toast-container{
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, .2);
+  backdrop-filter: blur(40px);
+  text-align: center;
+  z-index: 3;
+  transform: translateY(-150%);
+  transition: transform .5s ease; 
+  /* padding:2rem 1rem; */
+}
+
+
+
+.toast-container img{
+  width: 200px;
+}
+.toast-container h1{
+  font-size: 30px;
+}
+
+.toast-container p{
+  font-size: 11px;
+  margin: 8px 10px;
+}
+
+footer{
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  font-size: 10px;
+}
+ @media (max-width:415px){
+   .searchContainer input {
+     width: 85%;
+   }
+   .currentForcastDate{
+     flex-direction: row;
+     width: 100%;
+     justify-content: space-between;
+     margin-top: 10px;
+     border-bottom: 1px solid lightgray;
+   }
+   .currentForcastDate div {
+     margin: 10px;
+     text-align: center;
+   }
+   .dailyForcastContainer {
+     margin-left: 10px;
+     margin-right: 10px;
+   }
+   .dailyForcast{
+     display: flex;
+     width: 100%;
+     justify-content: space-between;
+     align-items: center;
+   }
+   .maxMinTemp{
+     display: flex;
+   }
+   .maxMinTemp span {
+     margin-left: 10px;
+     width: 20px;
+   }
+   #alert{
+     left:50%;
+   }
+   
+ }
+ 
+ 
+ 
+ 
+ 
+ 

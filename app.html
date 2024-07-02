@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Apps</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+   <div class="container">
+    
+   <div class="not-found">
+    <img src="404.png" alt="" >
+    <p>Oops! Location not found</p>
+    <w>Enter a Valid Location and try again</w><br><br>
+
+    <button class="close">OK</button>
+    <footer>&copy; Codejah All Right Reserved</footer>
+</div>
+
+<div class="toast-container">
+  <img src="./offline-removebg-preview.png" alt="">
+  <h1 class="off">Oops!! You Are Currently Offline</h1>
+  <p>Pls Check you Internet Connection and try again</p>
+  <button class="close offline-btn">OK</button>
+
+</div>
+    <div class="searchContainer">
+      <i class='bx bxs-map'></i>
+      <input type="text" placeholder="enter your location " class="search" onkeydown=" keydown(event)" >
+      <button id="searchButton"><i class='bx bx-search-alt-2'></i></button>
+    </div> 
+    <div class="currentForcast">
+      <div class="currentForcastInfo">
+        
+        
+        <div class="info">
+          <img id="currentIcon" src="">  
+          <span id="dayTemperature">0</span>
+          <span id="currentTemperatureUnit">°C</span>
+
+        </div> 
+        <div>
+        </div> 
+        <div class="currentConditions">
+          <div>Precipitation: <span id="precipitation"></span></div>
+          <div>Humidity: <span id="humidity"></span></div>
+          <div>Wind: <span id="wind"></span></div>
+        </div>
+      </div>
+      <div class="currentForcastDate">
+        <div id="cityName">Weather</div>
+        <div id="today">Weekday</div>
+        <div id="condition">Condition</div>
+      </div>
+    </div>
+    <div class="dailyForcastContainer">
+      <div class="dailyForcast"><div class="weekday">Fri</div>
+      <div><img id="currentIcon" src=""/></div>
+      <div class="maxMinTemp">
+        <span class="temp">25</span>
+        <span class="temp">19</span>
+      </div>
+    </div>
+   </div>
+   <p class="plan-text">Search any Location <br>Around the world</p>
+
+  <div id="alert"></div>
+
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
